@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "本库是尝试复现 lodash 库的实现",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "vue-cli-service lint",
+    "lint-fix": "eslint --fix --ext .js src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.2",
+    "eslint": "6.0.1"
   }
 }

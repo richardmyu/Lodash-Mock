@@ -1,28 +1,26 @@
-const dataType = data => {
-  let str = Object.prototype.toString.call(data)
+// 类型检测
+const dataType = value => {
+  let str = Object.prototype.toString.call(value)
   return str.slice(8, -1)
 }
-
-const isArray = data => {
-  return dataType(data) === 'Array'
-}
-
-const isObject = data => {
-  return dataType(data) === 'Object'
-}
-
-const isFunction = data => {
-  return dataType(data) === 'Function'
-}
-
-const isRegExp = data => {
-  return dataType(data) === 'RegExp'
-}
+// 数组
+const isArray = value => dataType(value) === "Array"
+// 对象
+const isObject = value => dataType(value) === 'Object'
+// 函数
+const isFunction = value => dataType(value) === 'Function'
+// 正则
+const isRegExp = value => dataType(value) === 'RegExp'
+// null
+const isNull = value => dataType(value) === 'Null'
+// NaN
+const isNaN = value => typeof value === 'number' && value !== value
 
 module.exports = {
   dataType,
   isArray,
   isObject,
   isFunction,
-  isRegExp
+  isRegExp,
+  isNaN
 }
