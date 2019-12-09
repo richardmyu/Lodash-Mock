@@ -23,7 +23,7 @@ assert.deepStrictEqual(_.chunk(ary, 0.2), _chunk(ary, 0.2))
 assert.deepStrictEqual(_.chunk(ary, 1.2), _chunk(ary, 1.2))
 
 assert.deepStrictEqual(_.chunk(ary, 2), _chunk(ary, 2))
-console.log(_.chunk(ary, 2), _chunk(ary, 2))
+
 assert.deepStrictEqual(_.chunk(ary, 3), _chunk(ary, 3))
 
 assert.deepStrictEqual(_.chunk(ary, 5), _chunk(ary, 5))
