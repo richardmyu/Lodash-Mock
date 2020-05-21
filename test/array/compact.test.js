@@ -18,4 +18,6 @@ assert.deepStrictEqual(_.compact(''), _compact(''))
 
 assert.deepStrictEqual(_.compact(null), _compact(null))
 
+assert.deepStrictEqual(_.compact([null]), _compact([null]))
+
 assert.deepStrictEqual(_.compact(ary), _compact(ary))
