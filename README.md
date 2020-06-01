@@ -32,3 +32,40 @@
 - [ ] dropRight
 - [ ] dropRightWhile
 - [ ] dropWhile
+
+实现 `differenceBy` 时，发现缺少工具类函数，项目调整，先完成工具类函数的实现。（2020-06-01）
+
+**实用函数 Util**
+
+- [ ] attempt
+- [ ] bindAll
+- [ ] cond
+- [ ] conforms
+- [ ] constant
+- [ ] defaultTo
+- [ ] flow
+- [ ] flowRight
+- [ ] identity
+- [ ] matches
+- [ ] metchesProperty
+- [ ] method
+- [ ] methodOf
+- [ ] mixin
+- [ ] noConflict
+- [ ] noop
+- [ ] nthArg
+- [ ] over
+- [ ] overSome
+- [ ] property
+- [ ] propertyOf
+- [ ] range
+- [ ] rangeRight
+- [ ] runInContext
+- [ ] stubArray
+- [ ] stubFalse
+- [ ] stubObject
+- [ ] stubString
+- [ ] stubTrue
+- [ ] times
+- [ ] toPath
+- [ ] uniqueId
