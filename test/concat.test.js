@@ -1,6 +1,6 @@
 const assert = require('assert').strict
 const _ = require('lodash')
-const { _concat, _concatEs5 } = require('../../lib/Array/concat')
+const { _concat, _concatEs5 } = require('../lib/concat')
 
 // console.log('_.concat', _.concat())
 // console.log('_concat', _concat())

@@ -1,6 +1,6 @@
 const assert = require('assert').strict
 const _ = require('lodash')
-const { _compact } = require('../../lib/Array/compact')
+const { _compact } = require('../lib/compact')
 
 let ary = [1, false, 'false', null, NaN, undefined]
 

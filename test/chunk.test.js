@@ -1,6 +1,6 @@
 const assert = require('assert').strict
 const _ = require('lodash')
-const { _chunk } = require('../../lib/Array/chunk')
+const { _chunk } = require('../lib/chunk')
 
 let ary = [1, 2, '3x', { a: 12 }]
 

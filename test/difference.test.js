@@ -1,6 +1,6 @@
 const asserrt = require('assert').strict
 const _ = require('lodash')
-const { _difference, _differenceSect, _differenceSet } = require('../../lib/Array/difference')
+const { _difference, _differenceSect, _differenceSet } = require('../lib/difference')
 
 // console.log(_.difference())
 // console.log(_difference())

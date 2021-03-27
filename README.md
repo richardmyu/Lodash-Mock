@@ -8,7 +8,7 @@
 [文档](https://lodash.com/)
 [github](https://github.com/lodash/lodash)
 
-基于 ES5 和 ES6 构建，测试暂时用的是 node 的 `assert`，当然测试环境就是 node，且不包含浏览器环境，<s>之后可能会更换测试框架吧</s>！！！
+基于 ES5 和 ES6 构建，测试暂时用的是 node 的 `assert`，当然测试环境就是 node，且不包含浏览器环境，之后可能会更换测试框架吧!
 
 ```shell
 # node version
@@ -35,6 +35,7 @@
  |-- util 工具库
  |
 ```
+
 
 
 
