@@ -1,22 +1,22 @@
-const _ = require('lodash');
-const { _chunk } = require('../lib/chunk');
+const lodash = require('lodash');
+const { chunk } = require('../lib/chunk');
 
 let ary = [1, 2, '3x', { a: 12 }];
 
-test('_chunk', () => {
-  expect(_chunk(ary)).toBe(_.chunk(ary));
-  expect(_chunk([])).toBe(_.chunk([]));
-  expect(_chunk()).toBe(_.chunk());
-  expect(_chunk(null)).toBe(_.chunk(null));
-  expect(_chunk(ary, 0)).toBe(_.chunk(ary, 0));
-  expect(_chunk(ary, 1)).toBe(_.chunk(ary, 1));
-  expect(_chunk(ary, -1)).toBe(_.chunk(ary, -1));
-  expect(_chunk(ary, 0.2)).toBe(_.chunk(ary, 0.2));
-  expect(_chunk(ary, 1.2)).toBe(_.chunk(ary, 1.2));
-  expect(_chunk(ary, 2)).toBe(_.chunk(ary, 2));
-  expect(_chunk(ary, 3)).toBe(_.chunk(ary, 3));
-  expect(_chunk(ary, 5)).toBe(_.chunk(ary, 5));
-  expect(_chunk(ary, '5')).toBe(_.chunk(ary, '5'));
-  expect(_chunk(ary, '5x')).toBe(_.chunk(ary, '5x'));
-  expect(_chunk(ary, '0')).toBe(_.chunk(ary, '0'));
+test('chunk', () => {
+  expect(chunk(ary)).toEqual(lodash.chunk(ary));
+  expect(chunk([])).toEqual(lodash.chunk([]));
+  expect(chunk()).toEqual(lodash.chunk());
+  expect(chunk(null)).toEqual(lodash.chunk(null));
+  expect(chunk(ary, 0)).toEqual(lodash.chunk(ary, 0));
+  expect(chunk(ary, 1)).toEqual(lodash.chunk(ary, 1));
+  expect(chunk(ary, -1)).toEqual(lodash.chunk(ary, -1));
+  expect(chunk(ary, 0.2)).toEqual(lodash.chunk(ary, 0.2));
+  expect(chunk(ary, 1.2)).toEqual(lodash.chunk(ary, 1.2));
+  expect(chunk(ary, 2)).toEqual(lodash.chunk(ary, 2));
+  expect(chunk(ary, 3)).toEqual(lodash.chunk(ary, 3));
+  expect(chunk(ary, 5)).toEqual(lodash.chunk(ary, 5));
+  expect(chunk(ary, '5')).toEqual(lodash.chunk(ary, '5'));
+  expect(chunk(ary, '5x')).toEqual(lodash.chunk(ary, '5x'));
+  expect(chunk(ary, '0')).toEqual(lodash.chunk(ary, '0'));
 });
