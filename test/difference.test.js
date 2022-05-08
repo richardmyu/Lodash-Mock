@@ -1,88 +1,53 @@
-// const _ = require('lodash');
-// const { _difference, _differenceSect, _differenceSet } = require('../lib/difference');
+const lodash = require('lodash');
+const { difference, differenceSect, differenceSet } = require('../lib/difference');
 
-// console.log(`=== test: ${_difference.name, _differenceSect.name, _differenceSet.name} strat ===`);
+test('difference',()=>{
+  expect(difference()).toEqual(lodash.difference());
+  expect(difference(1)).toEqual(lodash.difference(1));
+  expect(difference(null)).toEqual(lodash.difference(null));
+  expect(difference(undefined)).toEqual(lodash.difference(undefined));
+  expect(difference('')).toEqual(lodash.difference(''));
+  expect(difference('12')).toEqual(lodash.difference('12'));
+  expect(difference(1,2)).toEqual(lodash.difference(1,2));
+  expect(difference([1,2,3],1)).toEqual(lodash.difference([1,2,3],1));
+  expect(difference([1,2,3],1,1)).toEqual(lodash.difference([1,2,3],1,1));
+  expect(difference([1,2,3],[1])).toEqual(lodash.difference([1,2,3],[1]));
+  expect(difference([1,2,3],['1'])).toEqual(lodash.difference([1,2,3],['1']));
+  expect(difference([1, 2, 3], { 1: 2, length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 2, length: 1 }));
+  expect(difference([1, 2, 3], { 1: '12', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: '12', length: 1 }));
+  expect(difference([1, 2, 3], { 1: 'xx', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 'xx', length: 1 }));
+});
 
-// // console.log(_.difference())
-// // console.log(_difference())
-// // console.log(_differenceSet())
-// asserrt.deepStrictEqual(_.difference(), _difference());
-// asserrt.deepStrictEqual(_.difference(), _differenceSect());
-// asserrt.deepStrictEqual(_.difference(), _differenceSet());
+test('differenceSect', () => {
+  expect(differenceSect()).toEqual(lodash.difference());
+  expect(differenceSect(1)).toEqual(lodash.difference(1));
+  expect(differenceSect(null)).toEqual(lodash.difference(null));
+  expect(differenceSect(undefined)).toEqual(lodash.difference(undefined));
+  expect(differenceSect('')).toEqual(lodash.difference(''));
+  expect(differenceSect('12')).toEqual(lodash.difference('12'));
+  expect(differenceSect(1, 2)).toEqual(lodash.difference(1, 2));
+  expect(differenceSect([1, 2, 3], 1)).toEqual(lodash.difference([1, 2, 3], 1));
+  expect(differenceSect([1, 2, 3], 1, 1)).toEqual(lodash.difference([1, 2, 3], 1, 1));
+  expect(differenceSect([1, 2, 3], [1])).toEqual(lodash.difference([1, 2, 3], [1]));
+  expect(differenceSect([1, 2, 3], ['1'])).toEqual(lodash.difference([1, 2, 3], ['1']));
+  expect(differenceSect([1, 2, 3], { 1: 2, length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 2, length: 1 }));
+  expect(differenceSect([1, 2, 3], { 1: '12', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: '12', length: 1 }));
+  expect(differenceSect([1, 2, 3], { 1: 'xx', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 'xx', length: 1 }));
+});
 
-// // console.log(_.difference(1))
-// // console.log(_difference(1))
-// // console.log(_differenceSet(1))
-// asserrt.deepStrictEqual(_.difference(1), _difference(1));
-// asserrt.deepStrictEqual(_.difference(1), _differenceSect(1));
-// asserrt.deepStrictEqual(_.difference(1), _differenceSet(1));
-
-// // console.log(_.difference(null))
-// // console.log(_difference(null))
-// // console.log(_differenceSet(null))
-// asserrt.deepStrictEqual(_.difference(null), _difference(null));
-// asserrt.deepStrictEqual(_.difference(null), _differenceSect(null));
-// asserrt.deepStrictEqual(_.difference(null), _differenceSet(null));
-
-// // console.log(_.difference(1, 1))
-// // console.log(_difference(1, 1))
-// // console.log(_differenceSet(1, 1))
-// asserrt.deepStrictEqual(_.difference(1, 1), _difference(1, 1));
-// asserrt.deepStrictEqual(_.difference(1, 1), _differenceSect(1, 1));
-// asserrt.deepStrictEqual(_.difference(1, 1), _differenceSet(1, 1));
-
-// // console.log(_.difference(1, 1, 1))
-// // console.log(_difference(1, 1, 1))
-// // console.log(_differenceSet(1, 1, 1))
-// asserrt.deepStrictEqual(_.difference(1, 1, 1), _difference(1, 1, 1));
-// asserrt.deepStrictEqual(_.difference(1, 1, 1), _differenceSect(1, 1, 1));
-// asserrt.deepStrictEqual(_.difference(1, 1, 1), _differenceSet(1, 1, 1));
-
-// // console.log(_.difference([1, 2, 3], 1))
-// // console.log(_difference([1, 2, 3], 1))
-// // console.log(_differenceSet([1, 2, 3], 1))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], 1), _difference([1, 2, 3], 1));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], 1), _differenceSect([1, 2, 3], 1));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], 1), _differenceSet([1, 2, 3], 1));
-
-// // console.log(_.difference([1, 2, 3], 1, 1))
-// // console.log(_difference([1, 2, 3], 1, 1))
-// // console.log(_differenceSet([1, 2, 3], 1, 1))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], 1, 1), _difference([1, 2, 3], 1, 1));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], 1, 1), _differenceSect([1, 2, 3], 1, 1));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], 1, 1), _differenceSet([1, 2, 3], 1, 1));
-
-// // console.log(_.difference([1, 2, 3], [1]))
-// // console.log(_difference([1, 2, 3], [1]))
-// // console.log(_differenceSet([1, 2, 3], [1]))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], [1]), _difference([1, 2, 3], [1]));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], [1]), _differenceSect([1, 2, 3], [1]));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], [1]), _differenceSet([1, 2, 3], [1]));
-
-// // console.log(_.difference([1, 2, 3], ['1']))
-// // console.log(_difference([1, 2, 3], ['1']))
-// // console.log(_differenceSet([1, 2, 3], ['1']))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], ['1']), _difference([1, 2, 3], ['1']));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], ['1']), _differenceSect([1, 2, 3], ['1']));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], ['1']), _differenceSet([1, 2, 3], ['1']));
-
-// // console.log(_.difference([1, 2, 3], { 1: 2, length: 1 }))
-// // console.log(_difference([1, 2, 3], { 1: 2, length: 1 }))
-// // console.log(_differenceSet([1, 2, 3], { 1: 2, length: 1 }))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: 2, length: 1 }), _difference([1, 2, 3], { 1: 2, length: 1 }));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: 2, length: 1 }), _differenceSect([1, 2, 3], { 1: 2, length: 1 }));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: 2, length: 1 }), _differenceSet([1, 2, 3], { 1: 2, length: 1 }));
-
-// // console.log(_.difference([1, 2, 3], { 1: '12', length: 1 }))
-// // console.log(_difference([1, 2, 3], { 1: '12', length: 1 }))
-// // console.log(_differenceSet([1, 2, 3], { 1: '12', length: 1 }))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: '12', length: 1 }), _difference([1, 2, 3], { 1: '12', length: 1 }));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: '12', length: 1 }), _differenceSect([1, 2, 3], { 1: '12', length: 1 }));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: '12', length: 1 }), _differenceSet([1, 2, 3], { 1: '12', length: 1 }));
-
-// // console.log(_.difference([1, 2, 3], { 1: 'xx', length: 1 }))
-// // console.log(_difference([1, 2, 3], { 1: 'xx', length: 1 }))
-// // console.log(_differenceSet([1, 2, 3], { 1: 'xx', length: 1 }))
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: 'xx', length: 1 }), _difference([1, 2, 3], { 1: 'xx', length: 1 }));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: 'xx', length: 1 }), _differenceSect([1, 2, 3], { 1: 'xx', length: 1 }));
-// asserrt.deepStrictEqual(_.difference([1, 2, 3], { 1: 'xx', length: 1 }), _differenceSet([1, 2, 3], { 1: 'xx', length: 1 }));
+test('differenceSet', () => {
+  expect(differenceSet()).toEqual(lodash.difference());
+  expect(differenceSet(1)).toEqual(lodash.difference(1));
+  expect(differenceSet(null)).toEqual(lodash.difference(null));
+  expect(differenceSet(undefined)).toEqual(lodash.difference(undefined));
+  expect(differenceSet('')).toEqual(lodash.difference(''));
+  expect(differenceSet('12')).toEqual(lodash.difference('12'));
+  expect(differenceSet(1, 2)).toEqual(lodash.difference(1, 2));
+  expect(differenceSet([1, 2, 3], 1)).toEqual(lodash.difference([1, 2, 3], 1));
+  expect(differenceSet([1, 2, 3], 1, 1)).toEqual(lodash.difference([1, 2, 3], 1, 1));
+  expect(differenceSet([1, 2, 3], [1])).toEqual(lodash.difference([1, 2, 3], [1]));
+  expect(differenceSet([1, 2, 3], ['1'])).toEqual(lodash.difference([1, 2, 3], ['1']));
+  expect(differenceSet([1, 2, 3], { 1: 2, length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 2, length: 1 }));
+  expect(differenceSet([1, 2, 3], { 1: '12', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: '12', length: 1 }));
+  expect(differenceSet([1, 2, 3], { 1: 'xx', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 'xx', length: 1 }));
+});
