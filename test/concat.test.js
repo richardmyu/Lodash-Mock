@@ -1,5 +1,5 @@
 const lodash = require('lodash');
-const { concat, concatEs5 } = require('../lib/concat');
+const { concat, concatEs5 } = require('../lib/array/concat');
 
 test('concat', () => {
   expect(concat()).toEqual(lodash.concat());

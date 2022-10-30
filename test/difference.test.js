@@ -1,18 +1,18 @@
 const lodash = require('lodash');
-const { difference, differenceSect, differenceSet } = require('../lib/difference');
+const { difference, differenceSect, differenceSet } = require('../lib/array/difference');
 
-test('difference',()=>{
+test('difference', () => {
   expect(difference()).toEqual(lodash.difference());
   expect(difference(1)).toEqual(lodash.difference(1));
   expect(difference(null)).toEqual(lodash.difference(null));
   expect(difference(undefined)).toEqual(lodash.difference(undefined));
   expect(difference('')).toEqual(lodash.difference(''));
   expect(difference('12')).toEqual(lodash.difference('12'));
-  expect(difference(1,2)).toEqual(lodash.difference(1,2));
-  expect(difference([1,2,3],1)).toEqual(lodash.difference([1,2,3],1));
-  expect(difference([1,2,3],1,1)).toEqual(lodash.difference([1,2,3],1,1));
-  expect(difference([1,2,3],[1])).toEqual(lodash.difference([1,2,3],[1]));
-  expect(difference([1,2,3],['1'])).toEqual(lodash.difference([1,2,3],['1']));
+  expect(difference(1, 2)).toEqual(lodash.difference(1, 2));
+  expect(difference([1, 2, 3], 1)).toEqual(lodash.difference([1, 2, 3], 1));
+  expect(difference([1, 2, 3], 1, 1)).toEqual(lodash.difference([1, 2, 3], 1, 1));
+  expect(difference([1, 2, 3], [1])).toEqual(lodash.difference([1, 2, 3], [1]));
+  expect(difference([1, 2, 3], ['1'])).toEqual(lodash.difference([1, 2, 3], ['1']));
   expect(difference([1, 2, 3], { 1: 2, length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 2, length: 1 }));
   expect(difference([1, 2, 3], { 1: '12', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: '12', length: 1 }));
   expect(difference([1, 2, 3], { 1: 'xx', length: 1 })).toEqual(lodash.difference([1, 2, 3], { 1: 'xx', length: 1 }));

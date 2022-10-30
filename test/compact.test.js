@@ -1,5 +1,5 @@
 const lodash = require('lodash');
-const { compact } = require('../lib/compact');
+const { compact } = require('../lib/array/compact');
 
 let ary = [1, false, 'false', null, NaN, undefined];
 

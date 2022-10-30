@@ -1,5 +1,5 @@
 const lodash = require('lodash');
-const { chunk } = require('../lib/chunk');
+const { chunk } = require('../lib/array/chunk');
 
 let ary = [1, 2, '3x', { a: 12 }];
 
