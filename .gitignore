@@ -1,8 +1,2 @@
 node_modules/
 coverage/
-lodash.js
-.vscode
-.idea
-.editorconfig
-.eslintignore
-.eslintrc.js
