@@ -1,5 +1,5 @@
 const lodash = require('lodash');
-const { concat, concatEs5 } = require('../lib/array/concat');
+const { concat, concatES5 } = require('../lib/array/concat');
 
 test('concat', () => {
   expect(concat()).toEqual(lodash.concat());
@@ -18,18 +18,18 @@ test('concat', () => {
 
 });
 
-test('concatEs5', () => {
-  expect(concatEs5()).toEqual(lodash.concat());
-  expect(concatEs5('')).toEqual(lodash.concat(''));
-  expect(concatEs5(false)).toEqual(lodash.concat(false));
-  expect(concatEs5(1)).toEqual(lodash.concat(1));
-  expect(concatEs5(null)).toEqual(lodash.concat(null));
-  expect(concatEs5({ a: 1 })).toEqual(lodash.concat({ a: 1 }));
-  expect(concatEs5('as')).toEqual(lodash.concat('as'));
-  expect(concatEs5([1])).toEqual(lodash.concat([1]));
-  expect(concatEs5([1, 2])).toEqual(lodash.concat([1, 2]));
-  expect(concatEs5([1], 2, { name: 'hh' })).toEqual(lodash.concat([1], 2, { name: 'hh' }));
-  expect(concatEs5([1], NaN, null, undefined, true, '')).toEqual(lodash.concat([1], NaN, null, undefined, true, ''));
-  expect(concatEs5([1, [2], [[3]]], [2], [[3]])).toEqual(lodash.concat([1, [2], [[3]]], [2], [[3]]));
-  expect(concatEs5([1], [2, 3], [[3, 4]])).toEqual(lodash.concat([1], [2, 3], [[3, 4]]));
+test('concatES5', () => {
+  expect(concatES5()).toEqual(lodash.concat());
+  expect(concatES5('')).toEqual(lodash.concat(''));
+  expect(concatES5(false)).toEqual(lodash.concat(false));
+  expect(concatES5(1)).toEqual(lodash.concat(1));
+  expect(concatES5(null)).toEqual(lodash.concat(null));
+  expect(concatES5({ a: 1 })).toEqual(lodash.concat({ a: 1 }));
+  expect(concatES5('as')).toEqual(lodash.concat('as'));
+  expect(concatES5([1])).toEqual(lodash.concat([1]));
+  expect(concatES5([1, 2])).toEqual(lodash.concat([1, 2]));
+  expect(concatES5([1], 2, { name: 'hh' })).toEqual(lodash.concat([1], 2, { name: 'hh' }));
+  expect(concatES5([1], NaN, null, undefined, true, '')).toEqual(lodash.concat([1], NaN, null, undefined, true, ''));
+  expect(concatES5([1, [2], [[3]]], [2], [[3]])).toEqual(lodash.concat([1, [2], [[3]]], [2], [[3]]));
+  expect(concatES5([1], [2, 3], [[3, 4]])).toEqual(lodash.concat([1], [2, 3], [[3, 4]]));
 });
